@@ -63,7 +63,7 @@ namespace lab3
             _timeRemaining = _timeInMinutes * 60; // Convert minutes to seconds
             _timer.Start();
             UpdateTimeDisplay();
-            MessageBox.Show($"Таймер поставлено на {_timeInMinutes} хвилин.");
+            MessageBox.Show($"Таймер поставлено на {_timeInMinutes} хвилин(и).");
         }
 
         private bool CanStopTimer(object parameter)
