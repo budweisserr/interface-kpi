@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,14 +16,22 @@ using System.Windows.Shapes;
 
 namespace lab4
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private DatabaseAccess databaseAccess;
+
         public MainWindow()
         {
             InitializeComponent();
+            databaseAccess = new DatabaseAccess();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            DataTable booksTable = databaseAccess.GetBooks();
+            // Assuming you have a DataGrid named BooksDataGrid in your XAML
+            BooksDataGrid.ItemsSource = booksTable.DefaultView;
         }
     }
 }
