@@ -21,19 +21,63 @@ namespace lab5
         {
             InitializeComponent();
             LoadData();
+            LoadPublishersWithBookCount();
         }
 
         private void LoadData()
         {
             using (var context = new DBTestEntities())
             {
-                // Завантаження даних з таблиці Books
                 var booksData = context.Books.ToList();
                 BooksDataGrid.ItemsSource = booksData;
 
-                // Завантаження даних з таблиці Publishers
                 var publishersData = context.Publishers.ToList();
                 PublishersDataGrid.ItemsSource = publishersData;
+            }
+        }
+
+        private void LoadPublishersWithBookCount()
+        {
+            using (var context = new DBTestEntities())
+            {
+                var publishersBookCount = context.Publishers
+                                                  .Select(p => new
+                                                  {
+                                                      PublisherName = p.PublisherName,
+                                                      BookCount = p.Books.Count
+                                                  })
+                                                  .ToList();
+                PublishersBookCountDataGrid.ItemsSource = publishersBookCount;
+            }
+        }
+
+        private void SearchBooksByAuthor_Click(object sender, RoutedEventArgs e)
+        {
+            string author = AuthorTextBox.Text;
+            using (var context = new DBTestEntities())
+            {
+                var booksByAuthor = context.Books
+                                           .Where(b => b.Author == author)
+                                           .ToList();
+                BooksByAuthorDataGrid.ItemsSource = booksByAuthor;
+            }
+        }
+
+        private void SearchBooksByYear_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(YearTextBox.Text, out int year))
+            {
+                using (var context = new DBTestEntities())
+                {
+                    var booksByYear = context.Books
+                                             .Where(b => b.Year == year)
+                                             .ToList();
+                    BooksByYearDataGrid.ItemsSource = booksByYear;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid year.");
             }
         }
     }

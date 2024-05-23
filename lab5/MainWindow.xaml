@@ -20,6 +20,42 @@
                     <DataGrid x:Name="PublishersDataGrid" AutoGenerateColumns="True"/>
                 </Grid>
             </TabItem>
+            <!-- Вкладка для Books by Author -->
+            <TabItem Header="Books by Author">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <TextBlock Text="Author:" VerticalAlignment="Center"/>
+                        <TextBox x:Name="AuthorTextBox" Width="200" Margin="5"/>
+                        <Button Content="Search" Click="SearchBooksByAuthor_Click"/>
+                    </StackPanel>
+                    <DataGrid x:Name="BooksByAuthorDataGrid" Grid.Row="1" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+            <!-- Вкладка для Books by Year -->
+            <TabItem Header="Books by Year">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <TextBlock Text="Year:" VerticalAlignment="Center"/>
+                        <TextBox x:Name="YearTextBox" Width="100" Margin="5"/>
+                        <Button Content="Search" Click="SearchBooksByYear_Click"/>
+                    </StackPanel>
+                    <DataGrid x:Name="BooksByYearDataGrid" Grid.Row="1" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+            <!-- Вкладка для Publishers with Book Count -->
+            <TabItem Header="Publishers with Book Count">
+                <Grid>
+                    <DataGrid x:Name="PublishersBookCountDataGrid" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
