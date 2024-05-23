@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl x:Name="MainTabControl">
+            <!-- Вкладка для Books -->
+            <TabItem Header="Books">
+                <Grid>
+                    <DataGrid x:Name="BooksDataGrid" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+            <!-- Вкладка для Publishers -->
+            <TabItem Header="Publishers">
+                <Grid>
+                    <DataGrid x:Name="PublishersDataGrid" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

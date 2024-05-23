@@ -15,14 +15,26 @@ using System.Windows.Shapes;
 
 namespace lab5
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using (var context = new DBTestEntities())
+            {
+                // Завантаження даних з таблиці Books
+                var booksData = context.Books.ToList();
+                BooksDataGrid.ItemsSource = booksData;
+
+                // Завантаження даних з таблиці Publishers
+                var publishersData = context.Publishers.ToList();
+                PublishersDataGrid.ItemsSource = publishersData;
+            }
         }
     }
 }
