@@ -19,6 +19,7 @@ namespace lab3
         {
             StartCommand = new RelayCommand(StartTimer, CanStartTimer);
             StopCommand = new RelayCommand(StopTimer, CanStopTimer);
+            ResumeCommand = new RelayCommand(ResumeTimer, CanResumeTimer);
             _timer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(1)
@@ -53,6 +54,8 @@ namespace lab3
         public ICommand StartCommand { get; }
         public ICommand StopCommand { get; }
 
+        public ICommand ResumeCommand { get; }
+
         private bool CanStartTimer(object parameter)
         {
             return int.TryParse(MinutesInput, out _timeInMinutes) && _timeInMinutes > 0;
@@ -65,15 +68,27 @@ namespace lab3
             UpdateTimeDisplay();
             MessageBox.Show($"Таймер поставлено на {_timeInMinutes} хвилин(и).");
         }
+        private void ResumeTimer(object parameter)
+        {
+            _timer.Start();
+            UpdateTimeDisplay();
+            MessageBox.Show("Таймер продовжено.");
+        }
 
         private bool CanStopTimer(object parameter)
         {
             return _timer.IsEnabled;
         }
 
+        private bool CanResumeTimer(object parameter)
+        {
+            return !_timer.IsEnabled && _timeRemaining > 0;
+        }
+
         private void StopTimer(object parameter)
         {
             _timer.Stop();
+            SaveTimerRecord();
             MessageBox.Show("Таймер зупинено.");
         }
 
@@ -87,6 +102,7 @@ namespace lab3
             else
             {
                 _timer.Stop();
+                SaveTimerRecord();
                 MessageBox.Show("Час вичерпано!");
             }
         }
@@ -101,5 +117,29 @@ namespace lab3
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private void SaveTimerRecord()
+        {
+            using (var context = new DBLab6Entities())
+            {
+                context.TimerRecords.Add(new TimerRecords
+                {
+                    StartDateTime = DateTime.Now,
+                    EndDateTime = DateTime.Now.AddMinutes(_timeInMinutes),
+                    Duration = _timeInMinutes,
+                    RemainingTime = _timeRemaining
+                });
+                context.SaveChanges();
+            }
+        }
+
+        public void LoadTimerRecord(TimerRecords record)
+        {
+            _timeInMinutes = record.Duration;
+            _timeRemaining = record.RemainingTime;
+            UpdateTimeDisplay();
+            MessageBox.Show("Таймер завантажено.");
+        }
+
     }
 }
