@@ -11,13 +11,13 @@
             <!-- Вкладка для Books -->
             <TabItem Header="Books">
                 <Grid>
-                    <DataGrid x:Name="BooksDataGrid" AutoGenerateColumns="True"/>
+                    <DataGrid x:Name="BooksDataGrid" AutoGenerateColumns="True" AutoGeneratingColumn="BookAutoGeneration"/>
                 </Grid>
             </TabItem>
             <!-- Вкладка для Publishers -->
             <TabItem Header="Publishers">
                 <Grid>
-                    <DataGrid x:Name="PublishersDataGrid" AutoGenerateColumns="True"/>
+                    <DataGrid x:Name="PublishersDataGrid" AutoGenerateColumns="True" AutoGeneratingColumn="PublishersAutoGeneration"/>
                 </Grid>
             </TabItem>
             <!-- Вкладка для Books by Author -->
@@ -32,7 +32,7 @@
                         <TextBox x:Name="AuthorTextBox" Width="200" Margin="5"/>
                         <Button Content="Search" Click="SearchBooksByAuthor_Click"/>
                     </StackPanel>
-                    <DataGrid x:Name="BooksByAuthorDataGrid" Grid.Row="1" AutoGenerateColumns="True"/>
+                    <DataGrid x:Name="BooksByAuthorDataGrid" Grid.Row="1" AutoGenerateColumns="True" AutoGeneratingColumn="BookAutoGeneration"/>
                 </Grid>
             </TabItem>
             <!-- Вкладка для Books by Year -->
@@ -47,13 +47,13 @@
                         <TextBox x:Name="YearTextBox" Width="100" Margin="5"/>
                         <Button Content="Search" Click="SearchBooksByYear_Click"/>
                     </StackPanel>
-                    <DataGrid x:Name="BooksByYearDataGrid" Grid.Row="1" AutoGenerateColumns="True"/>
+                    <DataGrid x:Name="BooksByYearDataGrid" Grid.Row="1" AutoGenerateColumns="True" AutoGeneratingColumn="BookAutoGeneration"/>
                 </Grid>
             </TabItem>
             <!-- Вкладка для Publishers with Book Count -->
             <TabItem Header="Publishers with Book Count">
                 <Grid>
-                    <DataGrid x:Name="PublishersBookCountDataGrid" AutoGenerateColumns="True"/>
+                    <DataGrid x:Name="PublishersBookCountDataGrid" AutoGenerateColumns="True" />
                 </Grid>
             </TabItem>
         </TabControl>

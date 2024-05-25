@@ -80,5 +80,23 @@ namespace lab5
                 MessageBox.Show("Please enter a valid year.");
             }
         }
+
+        private void BookAutoGeneration(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+            if (headerName == "Publishers")
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void PublishersAutoGeneration(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string headerName = e.Column.Header.ToString();
+            if (headerName == "Books")
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

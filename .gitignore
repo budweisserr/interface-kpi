@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /lab4/MainWindow.xaml.cs
 /.gitignore
+/lab4/MainWindow.xaml
