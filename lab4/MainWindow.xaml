@@ -35,7 +35,7 @@
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=ISBN, Mode=TwoWay}" Name="txtISBN" Focusable="True"/>
 
             <TextBlock Grid.Row="2" Margin="5">Name:</TextBlock>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Name, Mode=TwoWay}" Name="txtName" Focusable="True" />
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Name, Mode=OneWay}" Name="txtName" Focusable="True" />
 
             <TextBlock Grid.Row="3" Margin="5">Author:</TextBlock>
             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Author, Mode=TwoWay}" Name="txtAuthor" Focusable="True" />
