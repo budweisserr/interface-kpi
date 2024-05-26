@@ -5,7 +5,7 @@
 
     <Grid Background="White">
              
-        <DataGrid x:Name="RecordsDataGrid" Grid.Row="0" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="RecordsDataGrid_MouseDoubleClick" Margin="5"/>
+        <DataGrid x:Name="RecordsDataGrid" Grid.Row="0" AutoGenerateColumns="True" IsReadOnly="True" Margin="5"/>
 
     </Grid>
 </Page>

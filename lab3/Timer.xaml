@@ -61,7 +61,7 @@
             <TextBlock Grid.Column="1" Grid.ColumnSpan="4" Text="Введіть час у хвилинах:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="184" />
             <TextBox x:Name="MinutesTextBox" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding MinutesInput, UpdateSourceTrigger=PropertyChanged}" Margin="10,10,10,10"/>
 
-            <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding TimeDisplay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding TimeDisplay}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Margin="0,66,0,0"/>
 
             <Button x:Name="StartButton" Grid.Row="3" Grid.Column="1" Content="Почати відлік" Command="{Binding StartCommand}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
             <Button x:Name="StopButton" Grid.Row="3" Grid.Column="3" Content="Зупинити відлік" Command="{Binding StopCommand}" HorizontalAlignment="Center" VerticalAlignment="Center"/>

@@ -5,35 +5,35 @@
       Title="Page Table 1">
     <StackPanel>
         <Menu>
-            <MenuItem Header="Action">
-                <MenuItem Header="Undo" Command="local:DataCommands.Undo"/>
+            <MenuItem Header="Дія">
+                <MenuItem Header="Команда Undo" Command="local:DataCommands.Undo"/>
                 <Separator/>
-                <MenuItem Header="Create" Command="local:DataCommands.New"/>
-                <MenuItem Header="Edit" Command="local:DataCommands.Replace"/>
-                <MenuItem Header="Save" Command="local:DataCommands.Save"/>
+                <MenuItem Header="Команда Create" Command="local:DataCommands.New"/>
+                <MenuItem Header="Команда Edit" Command="local:DataCommands.Replace"/>
+                <MenuItem Header="Команда Save" Command="local:DataCommands.Save"/>
                 <Separator/>
-                <MenuItem Header="Find" Command="local:DataCommands.Find"/>
-                <MenuItem Header="Delete" Command="local:DataCommands.Delete"/>
+                <MenuItem Header="Команда Find" Command="local:DataCommands.Find"/>
+                <MenuItem Header="Команда Delete" Command="local:DataCommands.Delete"/>
             </MenuItem>
-            <MenuItem Header="Report"/>
+            <MenuItem Header="Звіт"/>
         </Menu>
         <ToolBar>
-            <Button ToolTip="Undo" Command="local:DataCommands.Undo">
+            <Button ToolTip="Команда Undo" Command="local:DataCommands.Undo">
                 <Image Source="Images/undo.png" Width="16" Height="16"/>
             </Button>
-            <Button ToolTip="Create" Command="local:DataCommands.New">
+            <Button ToolTip="Команда Create" Command="local:DataCommands.New">
                 <Image Source="Images/create.png" Width="16" Height="16"/>
             </Button>
-            <Button ToolTip="Edit" Command="local:DataCommands.Replace">
+            <Button ToolTip="Команда Edit" Command="local:DataCommands.Replace">
                 <Image Source="Images/edit.png" Width="16" Height="16"/>
             </Button>
-            <Button ToolTip="Save" Command="local:DataCommands.Save">
+            <Button ToolTip="Команда Save" Command="local:DataCommands.Save">
                 <Image Source="Images/save.png" Width="16" Height="16"/>
             </Button>
-            <Button ToolTip="Find" Command="local:DataCommands.Find">
+            <Button ToolTip="Команда Find" Command="local:DataCommands.Find">
                 <Image Source="Images/find.png" Width="16" Height="16"/>
             </Button>
-            <Button ToolTip="Delete" Command="local:DataCommands.Delete">
+            <Button ToolTip="Команда Delete" Command="local:DataCommands.Delete">
                 <Image Source="Images/delete.png" Width="16" Height="16"/>
             </Button>
         </ToolBar>

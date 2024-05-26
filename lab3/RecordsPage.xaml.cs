@@ -24,6 +24,7 @@ namespace lab3
             }
         }
 
+        /*
         private void RecordsDataGrid_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (RecordsDataGrid.SelectedItem is TimerRecords selectedRecord)
@@ -39,5 +40,6 @@ namespace lab3
                 }
             }
         }
+        */
     }
 }

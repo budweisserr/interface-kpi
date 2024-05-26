@@ -38,31 +38,31 @@ namespace lab3
         {
             if (e.Command == DataCommands.Undo)
             {
-                MessageBox.Show("Undo command executed");
+                MessageBox.Show("Команда Undo була виклакана");
                 isDirty = false;
             }
             else if (e.Command == DataCommands.New)
             {
-                MessageBox.Show("New command executed");
+                MessageBox.Show("Команда New була викликана");
                 isDirty = true;
             }
             else if (e.Command == DataCommands.Replace)
             {
-                MessageBox.Show("Replace command executed");
+                MessageBox.Show("Команда Replace була викликана");
                 isDirty = true;
             }
             else if (e.Command == DataCommands.Save)
             {
-                MessageBox.Show("Save command executed");
+                MessageBox.Show("Команда Save була викликана");
                 isDirty = false;
             }
             else if (e.Command == DataCommands.Find)
             {
-                MessageBox.Show("Find command executed");
+                MessageBox.Show("Команда Find була викликана");
             }
             else if (e.Command == DataCommands.Delete)
             {
-                MessageBox.Show("Delete command executed");
+                MessageBox.Show("Команда Delete була викликана");
                 isDirty = false;
             }
 

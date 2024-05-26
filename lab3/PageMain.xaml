@@ -3,20 +3,20 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Page Main">
     <StackPanel>
-        <TextBlock Text="Welcome to the Main Page" FontSize="20" HorizontalAlignment="Center" Margin="10"/>
+        <TextBlock Text="Вітаємо на початковій сторінці!" FontSize="20" HorizontalAlignment="Center" Margin="10"/>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
             <Hyperlink NavigateUri="PageTable1.xaml" RequestNavigate="Hyperlink_RequestNavigate">
-                Go to PageTable1
+                Перейти до сторінки лабораторної роботи
             </Hyperlink>
         </TextBlock>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
     <Hyperlink NavigateUri="Timer.xaml" RequestNavigate="Hyperlink_RequestNavigate">
-        Go to Timer
+        Перейти до таймеру часу
     </Hyperlink>
         </TextBlock>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
     <Hyperlink NavigateUri="RecordsPage.xaml" RequestNavigate="Hyperlink_RequestNavigate">
-        Go to Database viewer
+        Перейти до перегляду записів в базі даних
     </Hyperlink>
         </TextBlock>
     </StackPanel>
