@@ -16,13 +16,9 @@ namespace lab3
         {
             this.frame1.Focus();
         }
-
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            // Navigate to the requested page
             frame1.Navigate(new Uri(e.Uri.ToString(), UriKind.Relative));
-            // Add ability to go back via frame navigation ui
-                    
         }
     }
 }
