@@ -1,7 +1,6 @@
-﻿using System.Linq;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
+using System.Windows.Navigation;
 
 namespace lab3
 {
@@ -10,44 +9,20 @@ namespace lab3
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
+            this.Loaded += MainWindow_Loaded;
         }
 
-        private void ViewRecords_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            TimerGrid.Visibility = Visibility.Collapsed;
-            RecordsGrid.Visibility = Visibility.Visible;
-            LoadRecords();
+            this.frame1.Focus();
         }
 
-        private void BackToTimer_Click(object sender, RoutedEventArgs e)
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            RecordsGrid.Visibility = Visibility.Collapsed;
-            TimerGrid.Visibility = Visibility.Visible;
-        }
-
-        private void LoadRecords()
-        {
-            using (var context = new DBLab6Entities())
-            {
-                RecordsDataGrid.ItemsSource = context.TimerRecords.ToList();
-            }
-        }
-
-        private void RecordsDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (RecordsDataGrid.SelectedItem is TimerRecords selectedRecord)
-            {
-                if (selectedRecord.RemainingTime > 0)
-                {
-                    ((MainViewModel)this.DataContext).LoadTimerRecord(selectedRecord);
-                    BackToTimer_Click(this, null);
-                }
-                else
-                {
-                    MessageBox.Show("Вибір цього запису неможливий.", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
+            // Navigate to the requested page
+            frame1.Navigate(new Uri(e.Uri.ToString(), UriKind.Relative));
+            // Add ability to go back via frame navigation ui
+                    
         }
     }
 }

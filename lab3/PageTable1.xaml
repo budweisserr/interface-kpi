@@ -1,0 +1,41 @@
+﻿<Page x:Class="lab3.PageTable1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:lab3.Commands"
+      Title="Page Table 1">
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="Action">
+                <MenuItem Header="Undo" Command="local:DataCommands.Undo"/>
+                <Separator/>
+                <MenuItem Header="Create" Command="local:DataCommands.New"/>
+                <MenuItem Header="Edit" Command="local:DataCommands.Replace"/>
+                <MenuItem Header="Save" Command="local:DataCommands.Save"/>
+                <Separator/>
+                <MenuItem Header="Find" Command="local:DataCommands.Find"/>
+                <MenuItem Header="Delete" Command="local:DataCommands.Delete"/>
+            </MenuItem>
+            <MenuItem Header="Report"/>
+        </Menu>
+        <ToolBar>
+            <Button ToolTip="Undo" Command="local:DataCommands.Undo">
+                <Image Source="Images/undo.png" Width="16" Height="16"/>
+            </Button>
+            <Button ToolTip="Create" Command="local:DataCommands.New">
+                <Image Source="Images/create.png" Width="16" Height="16"/>
+            </Button>
+            <Button ToolTip="Edit" Command="local:DataCommands.Replace">
+                <Image Source="Images/edit.png" Width="16" Height="16"/>
+            </Button>
+            <Button ToolTip="Save" Command="local:DataCommands.Save">
+                <Image Source="Images/save.png" Width="16" Height="16"/>
+            </Button>
+            <Button ToolTip="Find" Command="local:DataCommands.Find">
+                <Image Source="Images/find.png" Width="16" Height="16"/>
+            </Button>
+            <Button ToolTip="Delete" Command="local:DataCommands.Delete">
+                <Image Source="Images/delete.png" Width="16" Height="16"/>
+            </Button>
+        </ToolBar>
+    </StackPanel>
+</Page>

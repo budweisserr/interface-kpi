@@ -2,7 +2,8 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="RecordsPage">
-    <Grid Background="{StaticResource CommonBackgroundBrush}">
+
+    <Grid Background="White">
              
         <DataGrid x:Name="RecordsDataGrid" Grid.Row="0" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="RecordsDataGrid_MouseDoubleClick" Margin="5"/>
 

@@ -31,7 +31,7 @@ namespace lab3
                 if (selectedRecord.RemainingTime > 0)
                 {
                     ((MainViewModel)Application.Current.MainWindow.DataContext).LoadTimerRecord(selectedRecord);
-                    NavigationService.GoBack();
+                    
                 }
                 else
                 {
